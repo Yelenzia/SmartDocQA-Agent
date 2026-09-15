@@ -36,7 +36,7 @@ def main():
     init_state()
 
     st.title("智能文档问答 Agent")
-    st.caption("RAG · FAISS · 中文 Embedding · 大语言模型")
+    st.caption("RAG · TF-IDF 检索 · 大语言模型")
 
     with st.sidebar:
         st.subheader("文档知识库")
@@ -53,7 +53,7 @@ def main():
             else:
                 documents = []
 
-                with st.spinner("正在解析文档并建立向量索引..."):
+                with st.spinner("正在解析文档并建立检索索引..."):
                     for uploaded_file in uploaded_files:
                         temp_path = save_uploaded_file(uploaded_file)
                         docs = load_document(temp_path)

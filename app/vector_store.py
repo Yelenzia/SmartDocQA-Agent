@@ -7,12 +7,7 @@ from .config import settings
 
 
 class DocumentVectorStore:
-    """
-    Windows 稳定版检索器。
-
-    使用中文字符级 TF-IDF + 余弦相似度进行本地检索，
-    不依赖 PyTorch、Transformers、SentenceTransformers 或 FAISS。
-    """
+    """Local document retriever based on TF-IDF and cosine similarity."""
 
     def __init__(self):
         self.vectorizer = TfidfVectorizer(
